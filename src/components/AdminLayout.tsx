@@ -46,7 +46,7 @@ const AdminLayout: React.FC = () => {
     <div className="flex flex-col h-full bg-white">
       <div className="p-10 border-b">
         <Link to="/admin" className="text-2xl font-black text-red-600 uppercase tracking-tighter flex items-center">
-          FoxSp <span className="text-gray-400 ml-1 italic">Admin</span>
+          ĐỖ LÊ <span className="text-gray-400 ml-1 italic">Admin</span>
         </Link>
       </div>
 
@@ -95,7 +95,7 @@ const AdminLayout: React.FC = () => {
       {/* MOBILE TOP BAR */}
       <header className="md:hidden bg-white border-b px-6 py-4 sticky top-0 z-40 flex justify-between items-center shadow-sm">
         <Link to="/admin" className="text-xl font-black text-red-600 uppercase tracking-tighter">
-          FoxSp <span className="text-gray-400 ml-1 italic text-sm">Admin</span>
+          ĐỖ LÊ <span className="text-gray-400 ml-1 italic text-sm">Admin</span>
         </Link>
         <Sheet>
           <SheetTrigger asChild>

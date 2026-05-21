@@ -80,8 +80,8 @@ const CategoryPage: React.FC = () => {
     <div className="min-h-screen bg-white font-sans text-gray-900">
       <SEO 
         title={`Danh mục ${categoryName}`}
-        description={`Khám phá danh sách sản phẩm ${categoryName} chính hãng tại Fox Sports. Chất lượng hàng đầu, giá cả cạnh tranh.`}
-        keywords={`${categoryName}, vợt cầu lông, dụng cụ thể thao, Fox Sports`}
+        description={`Khám phá danh sách sản phẩm ${categoryName} chính hãng tại ĐỖ LÊ SPORT. Chất lượng hàng đầu, giá cả cạnh tranh.`}
+        keywords={`${categoryName}, vợt cầu lông, dụng cụ thể thao, ĐỖ LÊ SPORT`}
       />
       <Navbar />
 
@@ -120,7 +120,7 @@ const CategoryPage: React.FC = () => {
                     >
                       Tất cả
                     </button>
-                    {availableBrands.map((b) => (
+                    {Array.isArray(availableBrands) && availableBrands.map((b) => (
                       <button 
                         key={b}
                         onClick={() => { setBrand(b); setPage(1); }}
@@ -185,7 +185,7 @@ const CategoryPage: React.FC = () => {
               <div className="py-20 md:py-32 text-center font-black text-[#FF5F00] animate-pulse uppercase tracking-[0.2em] text-xs">
                 Đang tải dữ liệu...
               </div>
-            ) : products.length === 0 ? (
+            ) : (!Array.isArray(products) || products.length === 0) ? (
               <div className="py-20 md:py-32 text-center bg-gray-50 rounded-[2rem] md:rounded-[3rem] border-2 border-dashed border-gray-100 px-6">
                 <p className="text-gray-400 font-black uppercase tracking-widest italic text-xs">Không tìm thấy sản phẩm.</p>
                 <button onClick={clearFilters} className="mt-6 inline-block bg-black text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-[10px] font-black uppercase tracking-widest">Xóa bộ lọc</button>
@@ -193,7 +193,7 @@ const CategoryPage: React.FC = () => {
             ) : (
               <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                 <AnimatePresence mode="popLayout">
-                  {products.map((product) => {
+                  {Array.isArray(products) && products.map((product) => {
                     const hasSale = product.salePrice && product.salePrice > 0;
                     const discount = hasSale ? Math.round(((product.price - product.salePrice!) / product.price) * 100) : 0;
 

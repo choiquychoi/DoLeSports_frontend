@@ -112,7 +112,7 @@ const Checkout = () => {
                 <CheckCircle2 size={48} className="text-green-500" />
               </div>
               <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter italic mb-6">
-                THANKS. <br/>ORDER <span className="text-vanguard-orange">RECEIVED.</span>
+                THANKS. <br/>ORDER <span className="text-dole-orange">RECEIVED.</span>
               </h2>
               <p className="text-black/50 font-black uppercase tracking-[0.3em] text-xs">CHÚNG TÔI SẼ SỚM LIÊN HỆ ĐỂ XÁC NHẬN ĐƠN HÀNG CỦA BẠN.</p>
             </div>
@@ -133,7 +133,7 @@ const Checkout = () => {
                   i === 0 || i === 1 ? 'md:border-r-2' : i === 2 ? 'md:border-r-2' : ''
                 }`}>
                   <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/30 mb-2">{stat.label}</p>
-                  <p className={`text-lg md:text-xl font-black tracking-tighter break-all ${stat.isOrange ? 'text-vanguard-orange' : ''} ${stat.isOrder ? 'leading-tight' : ''}`}>
+                  <p className={`text-lg md:text-xl font-black tracking-tighter break-all ${stat.isOrange ? 'text-dole-orange' : ''} ${stat.isOrder ? 'leading-tight' : ''}`}>
                     {stat.val}
                   </p>
                 </div>
@@ -143,7 +143,7 @@ const Checkout = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-left mb-20">
               {/* DETAILS */}
               <div className="border-2 border-black p-10 space-y-10">
-                <h3 className="text-2xl font-black uppercase tracking-tighter italic border-b-2 border-black pb-6">CHI TIẾT <span className="text-vanguard-orange">ĐƠN HÀNG</span></h3>
+                <h3 className="text-2xl font-black uppercase tracking-tighter italic border-b-2 border-black pb-6">CHI TIẾT <span className="text-dole-orange">ĐƠN HÀNG</span></h3>
                 <div className="space-y-6">
                   {placedOrder.items.map((item: any, idx: number) => (
                     <div key={idx} className="flex justify-between items-center gap-6">
@@ -164,17 +164,17 @@ const Checkout = () => {
 
               {/* ADDRESS */}
               <div className="border-2 border-black p-10 space-y-10 bg-zinc-50">
-                <h3 className="text-2xl font-black uppercase tracking-tighter italic border-b-2 border-black pb-6">ĐỊA CHỈ <span className="text-vanguard-orange">GIAO HÀNG</span></h3>
+                <h3 className="text-2xl font-black uppercase tracking-tighter italic border-b-2 border-black pb-6">ĐỊA CHỈ <span className="text-dole-orange">GIAO HÀNG</span></h3>
                 <div className="space-y-6 font-black uppercase text-xs tracking-widest leading-loose">
-                  <div className="flex items-center gap-4"><User size={18} className="text-vanguard-orange" /> {placedOrder.customer.name}</div>
-                  <div className="flex items-center gap-4"><Phone size={18} className="text-vanguard-orange" /> {placedOrder.customer.phone}</div>
-                  <div className="flex items-start gap-4"><MapPin size={18} className="text-vanguard-orange shrink-0 mt-1" /> {placedOrder.customer.address}, {placedOrder.customer.district}, {placedOrder.customer.province}</div>
+                  <div className="flex items-center gap-4"><User size={18} className="text-dole-orange" /> {placedOrder.customer.name}</div>
+                  <div className="flex items-center gap-4"><Phone size={18} className="text-dole-orange" /> {placedOrder.customer.phone}</div>
+                  <div className="flex items-start gap-4"><MapPin size={18} className="text-dole-orange shrink-0 mt-1" /> {placedOrder.customer.address}, {placedOrder.customer.district}, {placedOrder.customer.province}</div>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/" className="bg-black text-white px-16 py-7 font-black uppercase tracking-widest text-xs hover:bg-vanguard-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)]">
+              <Link to="/" className="bg-black text-white px-16 py-7 font-black uppercase tracking-widest text-xs hover:bg-dole-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)]">
                 TIẾP TỤC MUA SẮM
               </Link>
             </div>
@@ -194,10 +194,10 @@ const Checkout = () => {
           <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-black/30">
             <Link to="/cart" className="hover:text-black">CART</Link>
             <ChevronRight size={10} />
-            <span className="text-vanguard-orange">CHECKOUT</span>
+            <span className="text-dole-orange">CHECKOUT</span>
           </div>
           <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter italic leading-none mt-4">
-            THANH <span className="text-vanguard-orange">TOÁN</span>
+            THANH <span className="text-dole-orange">TOÁN</span>
           </h1>
         </div>
       </div>
@@ -209,51 +209,51 @@ const Checkout = () => {
             <div className="space-y-10">
               <h2 className="text-3xl font-black uppercase tracking-tighter italic flex items-center gap-4">
                 <div className="w-10 h-10 bg-black flex items-center justify-center text-white"><User size={20} /></div>
-                THÔNG TIN <span className="text-vanguard-orange">KHÁCH HÀNG</span>
+                THÔNG TIN <span className="text-dole-orange">KHÁCH HÀNG</span>
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase tracking-widest text-black/40 ml-1">HỌ VÀ TÊN *</label>
-                  <input required name="name" value={formData.name} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-vanguard-orange outline-none font-black text-sm uppercase transition-colors" />
+                  <input required name="name" value={formData.name} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-dole-orange outline-none font-black text-sm uppercase transition-colors" />
                 </div>
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase tracking-widest text-black/40 ml-1">SỐ ĐIỆN THOẠI *</label>
-                  <input required name="phone" value={formData.phone} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-vanguard-orange outline-none font-black text-sm uppercase transition-colors" />
+                  <input required name="phone" value={formData.phone} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-dole-orange outline-none font-black text-sm uppercase transition-colors" />
                 </div>
               </div>
 
               <div className="space-y-3">
                 <label className="text-[10px] font-black uppercase tracking-widest text-black/40 ml-1">EMAIL (TÙY CHỌN)</label>
-                <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-vanguard-orange outline-none font-black text-sm uppercase transition-colors" />
+                <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-dole-orange outline-none font-black text-sm uppercase transition-colors" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase tracking-widest text-black/40 ml-1">TỈNH / THÀNH PHỐ *</label>
-                  <input required name="province" value={formData.province} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-vanguard-orange outline-none font-black text-sm uppercase transition-colors" />
+                  <input required name="province" value={formData.province} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-dole-orange outline-none font-black text-sm uppercase transition-colors" />
                 </div>
                 <div className="space-y-3">
                   <label className="text-[10px] font-black uppercase tracking-widest text-black/40 ml-1">QUẬN / HUYỆN *</label>
-                  <input required name="district" value={formData.district} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-vanguard-orange outline-none font-black text-sm uppercase transition-colors" />
+                  <input required name="district" value={formData.district} onChange={handleInputChange} className="w-full h-16 px-6 border-2 border-black focus:border-dole-orange outline-none font-black text-sm uppercase transition-colors" />
                 </div>
               </div>
 
               <div className="space-y-3">
                 <label className="text-[10px] font-black uppercase tracking-widest text-black/40 ml-1">ĐỊA CHỈ CHI TIẾT *</label>
-                <textarea required name="address" value={formData.address} onChange={handleInputChange} className="w-full min-h-[120px] p-6 border-2 border-black focus:border-vanguard-orange outline-none font-black text-sm uppercase transition-colors resize-none" />
+                <textarea required name="address" value={formData.address} onChange={handleInputChange} className="w-full min-h-[120px] p-6 border-2 border-black focus:border-dole-orange outline-none font-black text-sm uppercase transition-colors resize-none" />
               </div>
 
               <div className="space-y-3">
                 <label className="text-[10px] font-black uppercase tracking-widest text-black/40 ml-1">GHI CHÚ ĐƠN HÀNG (TÙY CHỌN)</label>
-                <textarea name="note" value={formData.note} onChange={handleInputChange} placeholder="VÍ DỤ: GIAO NGOÀI GIỜ HÀNH CHÍNH..." className="w-full min-h-[100px] p-6 border-2 border-black focus:border-vanguard-orange outline-none font-black text-sm uppercase transition-colors resize-none" />
+                <textarea name="note" value={formData.note} onChange={handleInputChange} placeholder="VÍ DỤ: GIAO NGOÀI GIỜ HÀNH CHÍNH..." className="w-full min-h-[100px] p-6 border-2 border-black focus:border-dole-orange outline-none font-black text-sm uppercase transition-colors resize-none" />
               </div>
             </div>
 
             <div className="space-y-10 pt-16 border-t-2 border-black">
               <h3 className="text-3xl font-black uppercase tracking-tighter italic flex items-center gap-4">
                 <div className="w-10 h-10 bg-black flex items-center justify-center text-white"><CreditCard size={20} /></div>
-                PHƯƠNG THỨC <span className="text-vanguard-orange">THANH TOÁN</span>
+                PHƯƠNG THỨC <span className="text-dole-orange">THANH TOÁN</span>
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -261,10 +261,10 @@ const Checkout = () => {
                   { id: 'COD', label: 'THANH TOÁN COD', desc: 'NHẬN HÀNG TRẢ TIỀN', icon: <Truck /> },
                   { id: 'Bank Transfer', label: 'CHUYỂN KHOẢN', desc: 'XỬ LÝ NHANH CHÓNG', icon: <CreditCard /> }
                 ].map((m) => (
-                  <label key={m.id} className={`p-8 border-4 cursor-pointer transition-all ${formData.paymentMethod === m.id ? 'border-vanguard-orange bg-white shadow-[10px_10px_0px_0px_rgba(255,95,0,0.1)]' : 'border-black hover:bg-zinc-50'}`}>
+                  <label key={m.id} className={`p-8 border-4 cursor-pointer transition-all ${formData.paymentMethod === m.id ? 'border-dole-orange bg-white shadow-[10px_10px_0px_0px_rgba(255,95,0,0.1)]' : 'border-black hover:bg-zinc-50'}`}>
                     <input type="radio" name="paymentMethod" value={m.id} checked={formData.paymentMethod === m.id} onChange={handleInputChange} className="hidden" />
                     <div className="flex items-center gap-4 mb-4">
-                      <div className={formData.paymentMethod === m.id ? 'text-vanguard-orange' : 'text-black'}>{m.icon}</div>
+                      <div className={formData.paymentMethod === m.id ? 'text-dole-orange' : 'text-black'}>{m.icon}</div>
                       <p className="font-black text-sm tracking-widest">{m.label}</p>
                     </div>
                     <p className="text-[10px] font-black text-black/30 tracking-widest uppercase">{m.desc}</p>
@@ -279,7 +279,7 @@ const Checkout = () => {
                   className="p-10 border-4 border-black bg-white shadow-[15px_15px_0px_0px_rgba(255,95,0,1)] space-y-8"
                 >
                   <div className="flex items-center gap-4 border-b-2 border-black pb-4">
-                    <div className="w-2 h-8 bg-vanguard-orange" />
+                    <div className="w-2 h-8 bg-dole-orange" />
                     <h4 className="text-xl font-black uppercase tracking-tighter">THÔNG TIN CHUYỂN KHOẢN</h4>
                   </div>
                   
@@ -290,7 +290,7 @@ const Checkout = () => {
                     </div>
                     <div className="space-y-2">
                       <p className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40">SỐ TÀI KHOẢN</p>
-                      <p className="text-3xl font-black tracking-[0.1em] text-vanguard-orange">81988886767</p>
+                      <p className="text-3xl font-black tracking-[0.1em] text-dole-orange">81988886767</p>
                     </div>
                     <div className="space-y-2">
                       <p className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40">NGÂN HÀNG</p>
@@ -315,14 +315,14 @@ const Checkout = () => {
           <div className="lg:col-span-5">
             <div className="sticky top-32 space-y-8">
               <div className="border-4 border-black p-10 bg-white shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
-                <h3 className="text-2xl font-black uppercase tracking-tighter italic mb-10 border-b-2 border-black pb-6">ĐƠN HÀNG <span className="text-vanguard-orange">CỦA BẠN</span></h3>
+                <h3 className="text-2xl font-black uppercase tracking-tighter italic mb-10 border-b-2 border-black pb-6">ĐƠN HÀNG <span className="text-dole-orange">CỦA BẠN</span></h3>
                 <div className="max-h-[350px] overflow-y-auto pr-4 custom-scrollbar space-y-8 mb-12">
                   {cart.map((item) => (
                     <div key={item._id} className="flex gap-6 items-center">
                       <div className="w-16 h-16 border-2 border-black p-1 bg-zinc-50 shrink-0"><img src={item.image} alt={item.name} className="w-full h-full object-contain" /></div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-black uppercase tracking-tighter text-xs truncate">{item.name}</h4>
-                        <p className="text-[10px] font-black text-vanguard-orange uppercase tracking-widest mt-1">{[item.selectedSize, item.selectedColor].filter(Boolean).join(' // ')}</p>
+                        <p className="text-[10px] font-black text-dole-orange uppercase tracking-widest mt-1">{[item.selectedSize, item.selectedColor].filter(Boolean).join(' // ')}</p>
                         <p className="text-[10px] font-black text-black/30 uppercase tracking-widest">SL: {item.quantity}</p>
                       </div>
                       <div className="font-black text-lg tracking-tighter">{(item.price * item.quantity).toLocaleString()}₫</div>
@@ -332,14 +332,14 @@ const Checkout = () => {
                 
                 <div className="space-y-4 pt-8 border-t-2 border-black mb-12">
                   <div className="flex justify-between font-black uppercase text-[10px] tracking-widest text-black/40"><span>TẠM TÍNH:</span><span className="text-black">{getCartTotal().toLocaleString()}₫</span></div>
-                  <div className="flex justify-between font-black uppercase text-[10px] tracking-widest text-black/40"><span>VẬN CHUYỂN:</span><span className="text-vanguard-orange">MIỄN PHÍ</span></div>
+                  <div className="flex justify-between font-black uppercase text-[10px] tracking-widest text-black/40"><span>VẬN CHUYỂN:</span><span className="text-dole-orange">MIỄN PHÍ</span></div>
                   <div className="flex justify-between items-end pt-6 border-t-4 border-black">
                     <span className="font-black uppercase tracking-tighter text-sm italic">TỔNG CỘNG:</span>
                     <span className="text-4xl font-black text-black tracking-tighter leading-none">{getCartTotal().toLocaleString()}₫</span>
                   </div>
                 </div>
 
-                <button type="submit" disabled={loading} className="w-full h-20 bg-black text-white font-black uppercase tracking-[0.3em] text-xs hover:bg-vanguard-orange transition-all duration-500 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] active:scale-95 flex items-center justify-center gap-4">
+                <button type="submit" disabled={loading} className="w-full h-20 bg-black text-white font-black uppercase tracking-[0.3em] text-xs hover:bg-dole-orange transition-all duration-500 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] active:scale-95 flex items-center justify-center gap-4">
                   {loading ? <Loader2 className="animate-spin" size={24} /> : 'XÁC NHẬN ĐẶT HÀNG →'}
                 </button>
               </div>

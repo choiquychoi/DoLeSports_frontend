@@ -29,7 +29,7 @@ const QuickContact: React.FC = () => {
 
   if (!contact) return null;
 
-  const phoneNoSpace = contact.phone.replace(/\s/g, '');
+  const phoneNoSpace = contact?.phone?.replace(/\s/g, '') || '';
 
   return (
     <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-4">
@@ -44,7 +44,7 @@ const QuickContact: React.FC = () => {
           >
             {/* MESSENGER */}
             <motion.a 
-              href={contact.socialLinks.facebook}
+              href={contact?.socialLinks?.facebook}
               target="_blank" 
               rel="noreferrer"
               className="flex items-center gap-4 group"
@@ -69,7 +69,7 @@ const QuickContact: React.FC = () => {
               <span className="bg-white border-2 border-black px-4 py-2 text-[10px] font-black uppercase tracking-widest text-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] opacity-0 group-hover:opacity-100 transition-all">
                 CHAT ZALO
               </span>
-              <div className="w-14 h-14 bg-black text-white flex items-center justify-center border-2 border-black hover:bg-vanguard-orange transition-colors">
+              <div className="w-14 h-14 bg-black text-white flex items-center justify-center border-2 border-black hover:bg-dole-orange transition-colors">
                 <MessageCircle size={24} />
               </div>
             </motion.a>
@@ -82,7 +82,7 @@ const QuickContact: React.FC = () => {
               <span className="bg-white border-2 border-black px-4 py-2 text-[10px] font-black uppercase tracking-widest text-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] opacity-0 group-hover:opacity-100 transition-all">
                 GỌI NGAY: {contact.phone}
               </span>
-              <div className="w-14 h-14 bg-vanguard-orange text-white flex items-center justify-center border-2 border-black">
+              <div className="w-14 h-14 bg-dole-orange text-white flex items-center justify-center border-2 border-black">
                 <Phone size={24} className="animate-pulse" />
               </div>
             </motion.a>

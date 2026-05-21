@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { BRAND_CONFIG } from '@/lib/config';
 
 interface SEOProps {
   title?: string;
@@ -18,11 +19,11 @@ const SEO: React.FC<SEOProps> = ({
   url, 
   type = 'website' 
 }) => {
-  const siteName = 'Fox Sports';
+  const siteName = BRAND_CONFIG.name;
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
-  const defaultDescription = 'Fox Sports - Chuyên cung cấp dụng cụ thể thao Cầu lông chính hãng, uy tín tại Việt Nam.';
-  const defaultKeywords = 'cầu lông, vợt cầu lông, giày thể thao, fox sports';
-  const defaultImage = 'https://scontent.fsgn16-1.fna.fbcdn.net/v/t39.30808-1/250153056_2420750178061878_163732344248490005_n.jpg';
+  const defaultDescription = BRAND_CONFIG.description;
+  const defaultKeywords = BRAND_CONFIG.seo.keywords;
+  const defaultImage = BRAND_CONFIG.seo.image;
   const siteUrl = window.location.origin;
 
   return (

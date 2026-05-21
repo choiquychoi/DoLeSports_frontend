@@ -13,9 +13,9 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO 
-        title="Fox Sports - Chuyên đồ thể thao Cầu lông chính hãng"
-        description="Fox Sports chuyên cung cấp vợt cầu lông, giày thể thao chính hãng. Uy tín, chất lượng tại TP.HCM."
-        keywords="cầu lông, giày thể thao, vợt cầu lông, Fox Sports"
+        title="ĐỖ LÊ SPORT - Shop Thể Thao & Sân Cầu Lông"
+        description="ĐỖ LÊ SPORT chuyên cung cấp vợt cầu lông, giày thể thao chính hãng và hệ thống sân cầu lông hiện đại tại TP.HCM."
+        keywords="cầu lông, giày thể thao, vợt cầu lông, sân cầu lông, đỗ lê sport"
       />
       <Navbar />
       <main>

@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'vanguard-orange': '#FF5F00',
-        'vanguard-black': '#000000',
-        'vanguard-white': '#FFFFFF',
-        'vanguard-grey': '#F5F5F5',
+        'dole-orange': '#FF5F00',
+        'dole-black': '#000000',
+        'dole-white': '#FFFFFF',
+        'dole-grey': '#F5F5F5',
       },
       fontFamily: {
         sans: ['Geist Variable', 'sans-serif'],

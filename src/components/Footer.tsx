@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from 'react-router-dom';
 import CONFIG from '@/lib/config';
 import logo from '@/assets/logo.jpg';
+import { BRAND_CONFIG } from '@/lib/config';
 
 interface IContact {
   companyName: string;
@@ -45,10 +46,10 @@ const Footer = () => {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="text-center lg:text-left">
             <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 italic">
-              ĐĂNG KÝ <span className="text-vanguard-orange">NEWSLETTER</span>
+              ĐĂNG KÝ <span className="text-dole-orange">NEWSLETTER</span>
             </h3>
             <p className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">
-              NHẬN THÔNG TIN ƯU ĐÃI SỚM NHẤT TỪ {contact?.companyName || 'FOX SPORTS'}.
+              NHẬN THÔNG TIN ƯU ĐÃI SỚM NHẤT TỪ {contact?.companyName || BRAND_CONFIG.name}.
             </p>
           </div>
           <form className="flex w-full max-w-md border-2 border-white p-1 bg-black">
@@ -57,7 +58,7 @@ const Footer = () => {
               placeholder="EMAIL CỦA BẠN..." 
               className="h-12 border-none bg-transparent focus-visible:ring-0 text-white placeholder:text-zinc-600 text-xs font-bold tracking-widest uppercase"
             />
-            <Button className="h-12 px-10 bg-white text-black hover:bg-vanguard-orange hover:text-white rounded-none font-black uppercase tracking-widest text-[10px] transition-all">
+            <Button className="h-12 px-10 bg-white text-black hover:bg-dole-orange hover:text-white rounded-none font-black uppercase tracking-widest text-[10px] transition-all">
               GỬI NGAY
             </Button>
           </form>
@@ -73,16 +74,16 @@ const Footer = () => {
               <div className="w-16 h-16 overflow-hidden border-2 border-white shadow-[5px_5px_0px_0px_rgba(255,255,255,0.1)] group-hover:shadow-[5px_5px_0px_0px_rgba(255,95,0,1)] transition-all">
                 <img 
                   src={logo} 
-                  alt={`Logo Fox Sports`} 
+                  alt={`Logo ĐỖ LÊ SPORT`} 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-2xl font-black uppercase tracking-tighter text-vanguard-orange">
-                  FOX
+                <span className="text-2xl font-black uppercase tracking-tighter text-dole-orange">
+                  {BRAND_CONFIG.shortName}
                 </span>
                 <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white italic">
-                  SPORTS
+                  {BRAND_CONFIG.suffix}
                 </span>
               </div>
             </Link>
@@ -90,20 +91,20 @@ const Footer = () => {
               Hệ thống phân phối dụng cụ thể thao chuyên nghiệp hàng đầu. Chuyên cung cấp Vợt Cầu Lông, Giày và Phụ kiện chính hãng.
             </p>
             <div className="flex gap-4">
-              {contact?.socialLinks.facebook && (
+              {contact?.socialLinks?.facebook && (
                 <a 
                   href={contact.socialLinks.facebook} 
                   target="_blank"
-                  className="w-12 h-12 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-vanguard-orange hover:border-vanguard-orange transition-all"
+                  className="w-12 h-12 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-dole-orange hover:border-dole-orange transition-all"
                 >
                   <Facebook className="h-5 w-5 text-white" />
                 </a>
               )}
-              {contact?.socialLinks.zalo && (
+              {contact?.socialLinks?.zalo && (
                 <a 
                   href={`https://zalo.me/${contact.socialLinks.zalo}`} 
                   target="_blank"
-                  className="w-12 h-12 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-vanguard-orange hover:border-vanguard-orange transition-all"
+                  className="w-12 h-12 bg-white/10 border border-white/20 flex items-center justify-center hover:bg-dole-orange hover:border-dole-orange transition-all"
                 >
                   <MessageCircle className="h-5 w-5 text-white" />
                 </a>
@@ -123,7 +124,7 @@ const Footer = () => {
                 { name: "Giày Thể Thao", path: "/category/Giày Thể Thao" },
               ].map(link => (
                 <li key={link.name}>
-                  <Link to={link.path} className="text-zinc-400 hover:text-vanguard-orange transition-colors text-xs font-black uppercase tracking-tight">{link.name}</Link>
+                  <Link to={link.path} className="text-zinc-400 hover:text-dole-orange transition-colors text-xs font-black uppercase tracking-tight">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -141,7 +142,7 @@ const Footer = () => {
                 { name: "Hệ thống cửa hàng", path: "/contact" }
               ].map(link => (
                 <li key={link.name}>
-                  <Link to={link.path} className="text-zinc-400 hover:text-vanguard-orange transition-colors text-xs font-black uppercase tracking-tight">{link.name}</Link>
+                  <Link to={link.path} className="text-zinc-400 hover:text-dole-orange transition-colors text-xs font-black uppercase tracking-tight">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -155,7 +156,7 @@ const Footer = () => {
             <div className="space-y-8 w-full">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <MapPin className="h-5 w-5 text-vanguard-orange" />
+                  <MapPin className="h-5 w-5 text-dole-orange" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[9px] font-black uppercase tracking-widest text-zinc-500 mb-1">Địa chỉ</span>
@@ -164,22 +165,22 @@ const Footer = () => {
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-vanguard-orange flex items-center justify-center shrink-0 border border-black">
+                <div className="w-12 h-12 bg-dole-orange flex items-center justify-center shrink-0 border border-black">
                   <Phone className="h-5 w-5 text-white" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[9px] font-black uppercase tracking-widest text-zinc-500 mb-1">Hotline</span>
-                  <a href={`tel:${contact?.phone}`} className="text-3xl font-black text-white hover:text-vanguard-orange transition-colors tracking-tighter italic">{contact?.phone || '0363.528.196'}</a>
+                  <a href={`tel:${contact?.phone}`} className="text-3xl font-black text-white hover:text-dole-orange transition-colors tracking-tighter italic">{contact?.phone || '0363.528.196'}</a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Mail className="h-5 w-5 text-vanguard-orange" />
+                  <Mail className="h-5 w-5 text-dole-orange" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[9px] font-black uppercase tracking-widest text-zinc-500 mb-1">Email</span>
-                  <a href={`mailto:${contact?.email}`} className="text-xs font-black text-white hover:text-vanguard-orange transition-colors truncate uppercase tracking-tight">{contact?.email || 'foxsportshcm@gmail.com'}</a>
+                  <a href={`mailto:${contact?.email}`} className="text-xs font-black text-white hover:text-dole-orange transition-colors truncate uppercase tracking-tight">{contact?.email || 'dolesporthcm@gmail.com'}</a>
                 </div>
               </div>
             </div>
@@ -191,7 +192,7 @@ const Footer = () => {
       <div className="border-t border-white/10 py-10 bg-black">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">
-            &copy; {new Date().getFullYear()} {contact?.companyName || 'FOX SPORTS'}. ALL RIGHTS RESERVED.
+            &copy; {new Date().getFullYear()} {contact?.companyName || 'ĐỖ LÊ SPORT'}. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-4">
             {["VISA", "MASTERCARD", "MOMO", "VNPAY"].map(tag => (

@@ -130,7 +130,7 @@ const FocusProduct = () => {
             className="max-w-xl"
           >
             <div className="flex items-center gap-6 mb-12">
-              <span className="text-[10px] font-black text-vanguard-orange tracking-[0.4em] uppercase">Master Series // 2026</span>
+              <span className="text-[10px] font-black text-dole-orange tracking-[0.4em] uppercase">Master Series // 2026</span>
               <div className="h-0.5 flex-1 bg-black/10" />
             </div>
             
@@ -154,11 +154,7 @@ const FocusProduct = () => {
                 </div>
               ))}
             </div>
-            
-            <button className="group relative bg-black text-white px-16 py-7 font-black uppercase tracking-widest text-sm hover:bg-vanguard-orange transition-all duration-300 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
-              SỞ HỮU NGAY
-              <span className="ml-4 inline-block group-hover:translate-x-2 transition-transform">→</span>
-            </button>
+             
           </motion.div>
         </div>
       </div>

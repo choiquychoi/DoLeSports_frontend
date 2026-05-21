@@ -40,10 +40,10 @@ const CategorySection = () => {
               Essential Collections // 2026
             </span>
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-black leading-none">
-              CHỌN <span className="text-vanguard-orange">THIẾT BỊ</span> CỦA BẠN
+              CHỌN <span className="text-dole-orange">THIẾT BỊ</span> CỦA BẠN
             </h2>
           </div>
-          <Link to="/category/Cầu lông" className="font-black uppercase tracking-widest text-[10px] border-b-2 border-black pb-1 hover:text-vanguard-orange hover:border-vanguard-orange transition-all">
+          <Link to="/category/Cầu lông" className="font-black uppercase tracking-widest text-[10px] border-b-2 border-black pb-1 hover:text-dole-orange hover:border-dole-orange transition-all">
             Xem tất cả danh mục →
           </Link>
         </div>
@@ -70,15 +70,15 @@ const CategorySection = () => {
                 
                 {/* Content */}
                 <div className="absolute inset-0 p-10 flex flex-col justify-between z-20">
-                  <span className="text-[40px] font-black text-white/10 group-hover:text-vanguard-orange/20 transition-colors leading-none tracking-tighter">
+                  <span className="text-[40px] font-black text-white/10 group-hover:text-dole-orange/20 transition-colors leading-none tracking-tighter">
                     {idx + 1}
                   </span>
                   
                   <div>
-                    <h3 className="text-2xl font-black uppercase tracking-tighter text-white mb-4 group-hover:text-vanguard-orange transition-colors">
+                    <h3 className="text-2xl font-black uppercase tracking-tighter text-white mb-4 group-hover:text-dole-orange transition-colors">
                       {cat.displayName}
                     </h3>
-                    <div className="w-12 h-1 bg-white group-hover:w-full group-hover:bg-vanguard-orange transition-all duration-300" />
+                    <div className="w-12 h-1 bg-white group-hover:w-full group-hover:bg-dole-orange transition-all duration-300" />
                   </div>
                 </div>
 

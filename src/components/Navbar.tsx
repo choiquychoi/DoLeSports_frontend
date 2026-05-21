@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { useCart } from '@/context/CartContext';
 import axios from 'axios';
 import logo from '@/assets/logo.jpg';
+import { BRAND_CONFIG } from '@/lib/config';
 
 import api from '@/lib/axios';
 
@@ -119,16 +120,16 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 overflow-hidden border-2 border-black group-hover:border-vanguard-orange transition-colors duration-300">
+            <div className="w-12 h-12 overflow-hidden border-2 border-black group-hover:border-dole-orange transition-colors duration-300">
               <img 
                 src={logo} 
-                alt="Logo Fox Sports" 
+                alt="Logo ĐỖ LÊ SPORT" 
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-2xl font-black uppercase tracking-tighter text-vanguard-orange">FOX</span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black italic">SPORTS</span>
+              <span className="text-2xl font-black uppercase tracking-tighter text-dole-orange">{BRAND_CONFIG.shortName}</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black italic">{BRAND_CONFIG.suffix}</span>
             </div>
           </Link>
         </div>
@@ -141,7 +142,7 @@ const Navbar = () => {
                 <li key={link.name}>
                   <Link 
                     to={link.path} 
-                    className="text-[13px] font-black uppercase tracking-[0.2em] text-black hover:text-vanguard-orange transition-colors relative group/link"
+                    className="text-[13px] font-black uppercase tracking-[0.2em] text-black hover:text-dole-orange transition-colors relative group/link"
                   >
                     {link.name}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover/link:w-full" />
@@ -159,7 +160,7 @@ const Navbar = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <X 
-                className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black cursor-pointer hover:text-vanguard-orange transition-colors" 
+                className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black cursor-pointer hover:text-dole-orange transition-colors" 
                 onClick={() => {setIsSearchOpen(false); setSearchQuery('');}}
               />
 
@@ -181,7 +182,7 @@ const Navbar = () => {
                         >
                           <img src={product.mainImage} alt={product.name} className="w-12 h-12 object-cover border border-zinc-200" />
                           <div className="flex flex-col">
-                            <span className="text-[9px] font-black uppercase text-vanguard-orange tracking-widest leading-none mb-1">{product.brand}</span>
+                            <span className="text-[9px] font-black uppercase text-dole-orange tracking-widest leading-none mb-1">{product.brand}</span>
                             <span className="text-xs font-black uppercase tracking-tighter line-clamp-1 group-hover/res:text-white">{product.name}</span>
                             <span className="text-[10px] font-bold text-zinc-400 group-hover/res:text-zinc-300">{product.price.toLocaleString('vi-VN')}₫</span>
                           </div>
@@ -212,7 +213,7 @@ const Navbar = () => {
             <Link to="/cart">
               <ShoppingCart className="h-6 w-6 stroke-[2.5]" />
               {getItemCount() > 0 && (
-                <span className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center bg-vanguard-orange text-white text-[9px] font-black border-2 border-white">
+                <span className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center bg-dole-orange text-white text-[9px] font-black border-2 border-white">
                   {getItemCount()}
                 </span>
               )}
@@ -235,13 +236,13 @@ const Navbar = () => {
                         <img src={logo} alt="Logo" className="w-full h-full object-cover grayscale" />
                       </div>
                       <div className="flex flex-col leading-none">
-                        <span className="text-xl font-black uppercase tracking-tighter text-black">FOX</span>
-                        <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-vanguard-orange italic">SPORTS</span>
+                        <span className="text-xl font-black uppercase tracking-tighter text-black">ĐỖ LÊ</span>
+                        <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-dole-orange italic">SPORT</span>
                       </div>
                     </div>
                     
                     <SheetClose asChild>
-                      <Button variant="ghost" size="icon" className="h-12 w-12 rounded-none bg-black text-white hover:bg-vanguard-orange transition-all">
+                      <Button variant="ghost" size="icon" className="h-12 w-12 rounded-none bg-black text-white hover:bg-dole-orange transition-all">
                         <X className="h-6 w-6" />
                       </Button>
                     </SheetClose>
@@ -251,7 +252,7 @@ const Navbar = () => {
                   <div className="relative mb-10">
                     <Input 
                       placeholder="TÌM SẢN PHẨM..." 
-                      className="h-14 rounded-none border-2 border-black bg-white focus:border-vanguard-orange text-black placeholder:text-zinc-400 pl-12 text-sm font-bold tracking-widest transition-all"
+                      className="h-14 rounded-none border-2 border-black bg-white focus:border-dole-orange text-black placeholder:text-zinc-400 pl-12 text-sm font-bold tracking-widest transition-all"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -273,10 +274,10 @@ const Navbar = () => {
                             to={link.path} 
                             className="group flex items-center justify-between py-4 border-b border-zinc-100 hover:border-black transition-all"
                           >
-                            <span className="text-xl font-black uppercase tracking-tighter text-black group-hover:text-vanguard-orange group-hover:translate-x-3 transition-all duration-300">
+                            <span className="text-xl font-black uppercase tracking-tighter text-black group-hover:text-dole-orange group-hover:translate-x-3 transition-all duration-300">
                               {link.name}
                             </span>
-                            <span className="text-black group-hover:text-vanguard-orange transition-colors opacity-0 group-hover:opacity-100 font-black">→</span>
+                            <span className="text-black group-hover:text-dole-orange transition-colors opacity-0 group-hover:opacity-100 font-black">→</span>
                           </Link>
                         </SheetClose>
                       </motion.div>
@@ -291,7 +292,7 @@ const Navbar = () => {
                       </div>
                       <div className="flex flex-col">
                         <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Hotline</span>
-                        <a href={`tel:${contact?.phone}`} className="text-lg font-black text-black hover:text-vanguard-orange transition-colors tracking-tighter">
+                        <a href={`tel:${contact?.phone}`} className="text-lg font-black text-black hover:text-dole-orange transition-colors tracking-tighter">
                           {contact?.phone || '0363.528.196'}
                         </a>
                       </div>
@@ -305,13 +306,13 @@ const Navbar = () => {
                         </span>
                       </div>
                       <div className="flex gap-4">
-                        {contact?.socialLinks.facebook && (
+                        {contact?.socialLinks?.facebook && (
                           <a href={contact.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-black flex items-center justify-center hover:bg-blue-600 transition-all">
                             <Facebook className="h-5 w-5 text-white" />
                           </a>
                         )}
-                        {contact?.socialLinks.zalo && (
-                          <a href={`https://zalo.me/${contact.socialLinks.zalo}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-black flex items-center justify-center hover:bg-vanguard-orange transition-all">
+                        {contact?.socialLinks?.zalo && (
+                          <a href={`https://zalo.me/${contact.socialLinks.zalo}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-black flex items-center justify-center hover:bg-dole-orange transition-all">
                             <MessageCircle className="h-5 w-5 text-white" />
                           </a>
                         )}

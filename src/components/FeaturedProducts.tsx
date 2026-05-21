@@ -35,9 +35,10 @@ const FeaturedProducts = () => {
       try {
         setLoading(true);
         const { data } = await api.get('/products?isFeatured=true&limit=20');
-        setProducts(data.products);
+        setProducts(data && Array.isArray(data.products) ? data.products : []);
       } catch (error) {
         console.error('Error fetching featured products:', error);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
@@ -47,21 +48,23 @@ const FeaturedProducts = () => {
 
   if (loading) return (
     <div className="py-32 text-center bg-white">
-      <div className="animate-spin h-10 w-10 border-4 border-black border-t-vanguard-orange mx-auto mb-4" />
+      <div className="animate-spin h-10 w-10 border-4 border-black border-t-dole-orange mx-auto mb-4" />
       <span className="font-black uppercase tracking-[0.3em] text-[10px]">Loading Elite Selection...</span>
     </div>
   );
+
+  const productList = Array.isArray(products) ? products : [];
 
   return (
     <section className="py-32 bg-white overflow-hidden border-b-2 border-black">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="inline-block px-3 py-1 bg-vanguard-orange text-white text-[9px] font-black uppercase tracking-[0.3em] mb-4">
+            <span className="inline-block px-3 py-1 bg-dole-orange text-white text-[9px] font-black uppercase tracking-[0.3em] mb-4">
               Premium Equipment
             </span>
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-black leading-none">
-              SẢN PHẨM <span className="text-vanguard-orange italic">NỔI BẬT</span>
+              SẢN PHẨM <span className="text-dole-orange italic">NỔI BẬT</span>
             </h2>
           </div>
           <div className="flex gap-4">
@@ -96,7 +99,7 @@ const FeaturedProducts = () => {
           }}
           className="!overflow-visible"
         >
-          {products.map((product) => {
+          {productList.map((product) => {
             const hasSale = product.salePrice && product.salePrice > 0;
             const displayPrice = hasSale ? product.salePrice : product.price;
             const oldPrice = hasSale ? product.price : null;
@@ -135,7 +138,7 @@ const FeaturedProducts = () => {
                         <div className="w-8 h-[1px] bg-black/20" />
                       </div>
                       
-                      <h3 className="text-lg font-black uppercase tracking-tighter text-black line-clamp-2 leading-none group-hover/slide:text-vanguard-orange transition-colors">
+                      <h3 className="text-lg font-black uppercase tracking-tighter text-black line-clamp-2 leading-none group-hover/slide:text-dole-orange transition-colors">
                         {product.name}
                       </h3>
 
@@ -146,12 +149,12 @@ const FeaturedProducts = () => {
                               {oldPrice.toLocaleString('vi-VN')}₫
                             </span>
                           )}
-                          <span className="text-2xl font-black text-vanguard-orange tracking-tighter leading-none">
+                          <span className="text-2xl font-black text-dole-orange tracking-tighter leading-none">
                             {displayPrice?.toLocaleString('vi-VN')}₫
                           </span>
                         </div>
                         
-                        <div className="w-10 h-10 bg-black text-white flex items-center justify-center group-hover/slide:bg-vanguard-orange transition-colors">
+                        <div className="w-10 h-10 bg-black text-white flex items-center justify-center group-hover/slide:bg-dole-orange transition-colors">
                           <ShoppingCart size={18} />
                         </div>
                       </div>

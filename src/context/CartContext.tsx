@@ -26,12 +26,12 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>(() => {
-    const savedCart = localStorage.getItem('tam_hi_sports_cart');
+    const savedCart = localStorage.getItem('dole_sport_cart');
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('tam_hi_sports_cart', JSON.stringify(cart));
+    localStorage.setItem('dole_sport_cart', JSON.stringify(cart));
   }, [cart]);
 
   const addToCart = (product: any, quantity: number = 1) => {

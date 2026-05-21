@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
         const { data } = await api.get('/contact');
         setContact(data);
         if (data) {
-          document.title = data.seoTitle || 'Liên hệ | Fox Sports';
+          document.title = data.seoTitle || 'Liên hệ | ĐỖ LÊ SPORT';
         }
       } catch (error) {
         console.error('Lỗi tải thông tin liên hệ:', error);
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
 
   if (loading) return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-      <div className="w-12 h-12 border-4 border-black border-t-vanguard-orange animate-spin mb-4" />
+      <div className="w-12 h-12 border-4 border-black border-t-dole-orange animate-spin mb-4" />
       <span className="font-black text-[10px] uppercase tracking-[0.4em]">Establishing Connection...</span>
     </div>
   );
@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
               GET IN TOUCH // 24/7
             </span>
             <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none italic mb-8">
-              GET IN <span className="text-vanguard-orange">TOUCH</span>
+              GET IN <span className="text-dole-orange">TOUCH</span>
             </h1>
             <p className="text-black/40 max-w-2xl mx-auto font-black text-xs md:text-sm uppercase tracking-[0.3em] leading-relaxed">
               CHÚNG TÔI LUÔN SẴN SÀNG HỖ TRỢ BẠN TRONG MỌI TRẢI NGHIỆM THỂ THAO CAO CẤP.
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
           {/* LEFT: Contact Information */}
           <div className="lg:col-span-5 space-y-12">
             <div className="space-y-4">
-              <h2 className="text-3xl font-black uppercase tracking-tighter italic">THÔNG TIN <span className="text-vanguard-orange">TRỰC TIẾP</span></h2>
+              <h2 className="text-3xl font-black uppercase tracking-tighter italic">THÔNG TIN <span className="text-dole-orange">TRỰC TIẾP</span></h2>
               <div className="w-20 h-1.5 bg-black" />
             </div>
 
@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
               {/* Hotline */}
               <a href={`tel:${contact?.phone}`} className="group p-10 border-2 border-black bg-white hover:bg-black transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.05)] hover:shadow-none">
                 <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 bg-vanguard-orange border-2 border-black flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 bg-dole-orange border-2 border-black flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
                     <Phone size={28} />
                   </div>
                   <div>
@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
               {/* Email */}
               <a href={`mailto:${contact?.email}`} className="group p-10 border-2 border-black bg-white hover:bg-black transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.05)] hover:shadow-none">
                 <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 bg-black border-2 border-black flex items-center justify-center text-white shrink-0 group-hover:bg-vanguard-orange transition-colors">
+                  <div className="w-14 h-14 bg-black border-2 border-black flex items-center justify-center text-white shrink-0 group-hover:bg-dole-orange transition-colors">
                     <Mail size={28} />
                   </div>
                   <div className="min-w-0">
@@ -121,12 +121,12 @@ const Contact: React.FC = () => {
               <div className="p-10 border-2 border-black bg-white space-y-6 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.05)]">
                 <span className="text-[10px] font-black uppercase tracking-widest text-black/40 block">MẠNG XÃ HỘI</span>
                 <div className="flex flex-wrap gap-4">
-                  {contact?.socialLinks.facebook && (
-                    <a href={contact.socialLinks.facebook} target="_blank" className="px-6 py-4 bg-black text-white hover:bg-vanguard-orange transition-all font-black text-[10px] uppercase tracking-widest border-2 border-black">
+                  {contact?.socialLinks?.facebook && (
+                    <a href={contact.socialLinks.facebook} target="_blank" className="px-6 py-4 bg-black text-white hover:bg-dole-orange transition-all font-black text-[10px] uppercase tracking-widest border-2 border-black">
                       FACEBOOK
                     </a>
                   )}
-                  {contact?.socialLinks.zalo && (
+                  {contact?.socialLinks?.zalo && (
                     <a href={`https://zalo.me/${contact.socialLinks.zalo}`} target="_blank" className="px-6 py-4 border-2 border-black font-black text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">
                       ZALO CHAT
                     </a>
@@ -157,14 +157,14 @@ const Contact: React.FC = () => {
              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 p-10 border-2 border-black bg-zinc-50">
                 <div className="space-y-4">
                    <div className="flex items-center gap-3">
-                      <MapPin size={18} className="text-vanguard-orange" />
+                      <MapPin size={18} className="text-dole-orange" />
                       <span className="text-[10px] font-black uppercase tracking-widest text-black/40">VỊ TRÍ CỬA HÀNG</span>
                    </div>
                    <p className="text-lg font-black uppercase leading-tight tracking-tighter">{contact?.address}</p>
                 </div>
                 <div className="space-y-4">
                    <div className="flex items-center gap-3">
-                      <Clock size={18} className="text-vanguard-orange" />
+                      <Clock size={18} className="text-dole-orange" />
                       <span className="text-[10px] font-black uppercase tracking-widest text-black/40">GIỜ HOẠT ĐỘNG</span>
                    </div>
                    <p className="text-lg font-black uppercase leading-tight tracking-tighter">08:00 AM - 21:00 PM<br/>THỨ 2 - CHỦ NHẬT</p>

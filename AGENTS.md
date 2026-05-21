@@ -1,26 +1,26 @@
-# AI Agent Guide: Fox Sports "Vanguard Elite" Design System
+# AI Agent Guide: ĐỖ LÊ SPORT "Dole Sport Elite" Design System
 
 > **IMPORTANT:** This project follows a strict, custom design system. All AI agents MUST adhere to these rules without exception.
 
-## 1. Vision & Identity: "Vanguard Elite"
+## 1. Vision & Identity: "Dole Sport Elite"
 - **Concept:** Minimalist Tech-Luxury.
 - **Vibe:** Sharp, High-Performance, Professional, Snappy.
 - **Inspiration:** Nike Pro, Apple Sports, Aerospace HUDs.
 
 ## 2. Core Rules of Sharpness (Non-Negotiable)
 - **NO BORDER RADIUS:** All elements MUST have `border-radius: 0`. Use `rounded-none` or ensure global CSS overrides are respected.
-- **NO SHADOWS:** Do not use `shadow-*` classes. Use 1px solid borders (`vanguard-border`) to define containers.
+- **NO SHADOWS:** Do not use `shadow-*` classes. Use 1px solid borders (`dole-border`) to define containers.
 - **1px Precision:** Use 1px solid black borders for all UI structures.
 
 ## 3. Color Palette
 - **Primary Background:** `#FFFFFF` (White)
 - **Primary Foreground:** `#000000` (Black)
-- **Accent (Action):** `#FF5F00` (Vanguard Orange / Neon)
+- **Accent (Action):** `#FF5F00` (Dole Orange / Neon)
 - **Subtle Background:** `#F5F5F5` (Subtle Grey for sectioning)
 
 **Tailwind Tokens:**
-- Colors: `vanguard-orange`, `vanguard-black`, `vanguard-white`, `vanguard-grey`.
-- CSS Variables: `--color-vanguard-orange`, `--color-vanguard-black`, etc.
+- Colors: `dole-orange`, `dole-black`, `dole-white`, `dole-grey`.
+- CSS Variables: `--color-dole-orange`, `--color-dole-black`, etc.
 
 ## 4. Typography (Geist Variable)
 - **Headings (H1-H6):** `font-black uppercase italic tracking-tighter`.
@@ -28,7 +28,7 @@
 - **Labels/Nav:** `uppercase font-bold tracking-[0.3em] text-[10px]`.
 
 ## 5. Components & Utilities
-- **Buttons:** Sharp corners, black background, white text. Hover state: Vanguard Orange.
+- **Buttons:** Sharp corners, black background, white text. Hover state: Dole Orange.
 - **Transitions:** Must be "Snappy". Use `.snappy-transition` (cubic-bezier) for instant feedback.
 - **HUD Elements:** Use thin 1px lines and wide-spaced labels to create a technical/aerospace feel.
 

@@ -19,9 +19,10 @@ const HeroBanner = () => {
     const fetchBanners = async () => {
       try {
         const { data } = await api.get('/banners');
-        setBanners(data);
+        setBanners(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error('Lỗi khi tải banners:', error);
+        setBanners([]);
       } finally {
         setLoading(false);
       }
@@ -38,11 +39,11 @@ const HeroBanner = () => {
     }
   ];
 
-  const slides = banners.length > 0 ? banners : defaultSlides;
+  const slides = Array.isArray(banners) && banners.length > 0 ? banners : defaultSlides;
 
-  if (loading && banners.length === 0) return (
+  if (loading && (!Array.isArray(banners) || banners.length === 0)) return (
     <div className="w-full aspect-[16/7] md:aspect-[21/7] bg-white flex items-center justify-center border-b-2 border-black">
-      <div className="w-10 h-10 border-4 border-black border-t-vanguard-orange animate-spin" />
+      <div className="w-10 h-10 border-4 border-black border-t-dole-orange animate-spin" />
     </div>
   );
 
@@ -113,11 +114,11 @@ const HeroBanner = () => {
                       transition={{ type: "spring", stiffness: 200, damping: 25, delay: 0.4 }}
                       className="flex flex-col md:flex-row items-start md:items-center gap-8"
                     >
-                      <p className="text-xs md:text-sm font-black text-black uppercase tracking-[0.2em] max-w-md leading-relaxed border-l-4 border-vanguard-orange pl-6 drop-shadow-[1px_1px_0px_rgba(255,255,255,0.5)]">
+                      <p className="text-xs md:text-sm font-black text-black uppercase tracking-[0.2em] max-w-md leading-relaxed border-l-4 border-dole-orange pl-6 drop-shadow-[1px_1px_0px_rgba(255,255,255,0.5)]">
                         {slide.subtitle}
                       </p>
                       
-                      <button className="group relative bg-black text-white px-10 py-5 font-black uppercase tracking-widest text-xs hover:bg-vanguard-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                      <button className="group relative bg-black text-white px-10 py-5 font-black uppercase tracking-widest text-xs hover:bg-dole-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
                         SẮM NGAY
                         <span className="ml-3 inline-block group-hover:translate-x-2 transition-transform">→</span>
                       </button>

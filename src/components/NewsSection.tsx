@@ -37,7 +37,7 @@ const NewsSection = () => {
   if (loading) {
     return (
       <div className="py-32 flex justify-center bg-white">
-        <div className="animate-spin h-10 w-10 border-4 border-black border-t-vanguard-orange" />
+        <div className="animate-spin h-10 w-10 border-4 border-black border-t-dole-orange" />
       </div>
     );
   }
@@ -49,10 +49,10 @@ const NewsSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center mb-20">
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-4 block">
-            Inside Fox Sports // Stories
+            Inside ĐỖ LÊ SPORT // Stories
           </span>
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-black leading-none italic">
-            TIN TỨC <span className="text-vanguard-orange">THẾ THAO</span>
+            TIN TỨC <span className="text-dole-orange">THẾ THAO</span>
           </h2>
           <div className="mt-8 w-24 h-1 bg-black" />
         </div>
@@ -88,7 +88,7 @@ const NewsSection = () => {
               <div className="p-10 flex flex-col flex-1">
                 <h3 
                   onClick={() => window.location.href = `/news/${item.slug}`} 
-                  className="text-xl font-black uppercase tracking-tighter text-black mb-6 group-hover:text-vanguard-orange transition-colors line-clamp-2 leading-none cursor-pointer"
+                  className="text-xl font-black uppercase tracking-tighter text-black mb-6 group-hover:text-dole-orange transition-colors line-clamp-2 leading-none cursor-pointer"
                 >
                   {item.title}
                 </h3>
@@ -100,7 +100,7 @@ const NewsSection = () => {
                 <div className="mt-auto">
                   <button 
                     onClick={() => window.location.href = `/news/${item.slug}`}
-                    className="inline-flex items-center gap-4 font-black uppercase tracking-[0.2em] text-[10px] text-black hover:text-vanguard-orange transition-all group/btn"
+                    className="inline-flex items-center gap-4 font-black uppercase tracking-[0.2em] text-[10px] text-black hover:text-dole-orange transition-all group/btn"
                   >
                     Đọc chi tiết
                     <span className="group-hover/btn:translate-x-2 transition-transform">→</span>

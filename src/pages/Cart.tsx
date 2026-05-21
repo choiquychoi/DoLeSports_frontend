@@ -33,9 +33,9 @@ const Cart = () => {
                 <ShoppingBag size={56} className="text-black" />
               </div>
             </div>
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none italic">GIỎ HÀNG <span className="text-vanguard-orange">TRỐNG</span></h2>
+            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none italic">GIỎ HÀNG <span className="text-dole-orange">TRỐNG</span></h2>
             <p className="text-black/50 font-black uppercase tracking-[0.2em] text-xs">CÓ VẺ NHƯ BẠN CHƯA CHỌN ĐƯỢC THIẾT BỊ ƯNG Ý.</p>
-            <Link to="/" className="inline-block bg-black text-white px-12 py-6 font-black uppercase tracking-widest text-sm hover:bg-vanguard-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+            <Link to="/" className="inline-block bg-black text-white px-12 py-6 font-black uppercase tracking-widest text-sm hover:bg-dole-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
               TIẾP TỤC MUA SẮM →
             </Link>
           </div>
@@ -57,13 +57,13 @@ const Cart = () => {
               <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-black/30">
                 <Link to="/" className="hover:text-black">HOME</Link>
                 <ChevronRight size={10} />
-                <span className="text-vanguard-orange">SHOPPING CART</span>
+                <span className="text-dole-orange">SHOPPING CART</span>
               </div>
               <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter italic leading-none">
-                GIỎ <span className="text-vanguard-orange">HÀNG</span>
+                GIỎ <span className="text-dole-orange">HÀNG</span>
               </h1>
             </div>
-            <p className="text-sm font-black uppercase tracking-widest border-l-4 border-vanguard-orange pl-6 mb-2">
+            <p className="text-sm font-black uppercase tracking-widest border-l-4 border-dole-orange pl-6 mb-2">
               BẠN ĐANG CÓ {getItemCount()} SẢN PHẨM TRONG GIỎ
             </p>
           </div>
@@ -98,8 +98,8 @@ const Cart = () => {
                     />
                   </div>
                   <div className="min-w-0 space-y-2">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-vanguard-orange">{item.category}</span>
-                    <h3 className="text-lg font-black uppercase tracking-tighter group-hover:text-vanguard-orange transition-colors truncate">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-dole-orange">{item.category}</span>
+                    <h3 className="text-lg font-black uppercase tracking-tighter group-hover:text-dole-orange transition-colors truncate">
                       {item.name}
                     </h3>
                     <div className="flex flex-wrap gap-3 pt-2">
@@ -139,7 +139,7 @@ const Cart = () => {
                    </p>
                    <button 
                       onClick={() => removeFromCart(item._id, item.selectedSize, item.selectedColor)}
-                      className="text-black/20 hover:text-vanguard-orange transition-colors flex items-center gap-2 font-black text-[10px] uppercase tracking-widest"
+                      className="text-black/20 hover:text-dole-orange transition-colors flex items-center gap-2 font-black text-[10px] uppercase tracking-widest"
                     >
                       <Trash2 size={16} /> <span className="hidden md:inline">LOẠI BỎ</span>
                    </button>
@@ -147,7 +147,7 @@ const Cart = () => {
               </motion.div>
             ))}
 
-            <Link to="/" className="inline-flex items-center gap-4 text-xs font-black uppercase tracking-[0.2em] hover:text-vanguard-orange transition-all mt-12 group">
+            <Link to="/" className="inline-flex items-center gap-4 text-xs font-black uppercase tracking-[0.2em] hover:text-dole-orange transition-all mt-12 group">
               <ArrowLeft size={16} className="group-hover:-translate-x-2 transition-transform" /> 
               QUAY LẠI CỬA HÀNG
             </Link>
@@ -158,7 +158,7 @@ const Cart = () => {
             <div className="sticky top-32 space-y-12">
               <div className="border-4 border-black p-10 bg-white shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
                 <h3 className="text-2xl font-black uppercase tracking-tighter italic mb-10 border-b-2 border-black pb-6">
-                  TÓM TẮT <span className="text-vanguard-orange">ĐƠN HÀNG</span>
+                  TÓM TẮT <span className="text-dole-orange">ĐƠN HÀNG</span>
                 </h3>
                 
                 <div className="space-y-6 mb-12">
@@ -172,7 +172,7 @@ const Cart = () => {
                   </div>
                   <div className="flex justify-between font-black uppercase text-[10px] tracking-widest">
                     <span className="text-black/40">VẬN CHUYỂN:</span>
-                    <span className="text-vanguard-orange font-black">MIỄN PHÍ</span>
+                    <span className="text-dole-orange font-black">MIỄN PHÍ</span>
                   </div>
                 </div>
 
@@ -186,7 +186,7 @@ const Cart = () => {
                 </div>
 
                 <Link to="/checkout" className="block w-full">
-                  <button className="w-full bg-black text-white h-20 font-black uppercase tracking-[0.3em] text-xs hover:bg-vanguard-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] active:shadow-none active:translate-x-1 active:translate-y-1 flex items-center justify-center gap-4 group/btn">
+                  <button className="w-full bg-black text-white h-20 font-black uppercase tracking-[0.3em] text-xs hover:bg-dole-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] active:shadow-none active:translate-x-1 active:translate-y-1 flex items-center justify-center gap-4 group/btn">
                     TIẾN HÀNH THANH TOÁN
                     <ArrowRight size={18} className="group-hover/btn:translate-x-2 transition-transform" />
                   </button>
@@ -196,7 +196,7 @@ const Cart = () => {
               {/* Trust Badges */}
               <div className="grid grid-cols-1 gap-4">
                 <div className="flex items-center gap-6 p-6 border-2 border-black/5">
-                  <Truck size={32} className="text-vanguard-orange" strokeWidth={2.5} />
+                  <Truck size={32} className="text-dole-orange" strokeWidth={2.5} />
                   <div>
                     <h4 className="text-xs font-black uppercase tracking-widest">GIAO HÀNG HỎA TỐC</h4>
                     <p className="text-[10px] text-black/40 font-black uppercase mt-1">TRONG VÒNG 24H LÀM VIỆC</p>
