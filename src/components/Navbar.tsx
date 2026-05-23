@@ -107,6 +107,8 @@ const Navbar = () => {
     { name: 'Giày', path: '/category/Giày Thể Thao' },
     { name: 'Phụ kiện', path: '/category/Phụ Kiện' },
     { name: 'Tin tức', path: '/news' },
+    { name: 'Đặt sân', path: '/dat-san' },
+    { name: 'Học cầu lông', path: '/hoc-cau-long' },
     { name: "Liên Hệ", path: "/contact" },
   ];
 

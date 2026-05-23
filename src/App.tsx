@@ -1,12 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
+import CourtBooking from './pages/CourtBooking';
+import CoachingLanding from './pages/CoachingLanding';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminLogin from './pages/AdminLogin';
 import AdminProducts from './pages/AdminProducts';
 import AdminContact from './pages/AdminContact';
 import AdminNews from './pages/AdminNews';
 import AdminOrders from './pages/AdminOrders';
+import AdminBookings from './pages/AdminBookings';
 import ProductDetail from './pages/ProductDetail';
 import CategoryPage from './pages/CategoryPage';
 import AdminLayout from './components/AdminLayout';
@@ -19,8 +22,6 @@ import OrderTracking from './pages/OrderTracking';
 import { CartProvider } from './context/CartContext';
 import QuickContact from './components/QuickContact';
 import AdminBanners from './pages/AdminBanners';
-
-// Component bảo vệ Route Admin
 
 // Component bảo vệ Route Admin
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -38,6 +39,8 @@ const App: React.FC = () => {
         <Routes>
           {/* Route công khai */}
           <Route path="/" element={<Home />} />
+          <Route path="/dat-san" element={<CourtBooking />} />
+          <Route path="/hoc-cau-long" element={<CoachingLanding />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
           <Route path="/contact" element={<Contact />} />
@@ -61,10 +64,12 @@ const App: React.FC = () => {
             <Route index element={<AdminDashboard />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="orders" element={<AdminOrders />} />
+            <Route path="bookings" element={<AdminBookings />} />
             <Route path="contact" element={<AdminContact />} />
             <Route path="news" element={<AdminNews />} />
             <Route path="banners" element={<AdminBanners />} />
-            </Route>        </Routes>
+          </Route>
+        </Routes>
         
         {/* Chỉ hiển thị QuickContact ở trang người dùng, không hiện ở Admin */}
         {!window.location.pathname.startsWith('/admin') && <QuickContact />}

@@ -10,7 +10,8 @@ import {
   ShoppingBag,
   Image as ImageIcon,
   Menu,
-  X
+  X,
+  Calendar
 } from 'lucide-react';
 import {
   Sheet,
@@ -37,6 +38,7 @@ const AdminLayout: React.FC = () => {
     { path: '/admin', label: 'Dashboard', icon: LayoutDashboard },
     { path: '/admin/products', label: 'Quản lý Sản phẩm', icon: Package },
     { path: '/admin/orders', label: 'Quản lý Đơn hàng', icon: ShoppingBag },
+    { path: '/admin/bookings', label: 'Lịch đặt sân', icon: Calendar },
     { path: '/admin/banners', label: 'Quản lý Banner', icon: ImageIcon },
     { path: '/admin/news', label: 'Quản lý Tin tức', icon: Newspaper },
     { path: '/admin/contact', label: 'Thông tin & SEO', icon: Headphones },
