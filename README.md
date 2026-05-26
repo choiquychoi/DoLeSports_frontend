@@ -1,53 +1,39 @@
 # 🏸 ĐỖ LÊ SPORT - Frontend Web App
 
-Giao diện người dùng và hệ thống quản trị hiện đại cho **ĐỖ LÊ SPORT**. Được thiết kế theo phong cách **Elite Sharpness** - Mạnh mẽ, Góc cạnh, Đẳng cấp.
+Giao diện người dùng và hệ thống quản trị hiện đại cho **ĐỖ LÊ SPORT**. Thiết kế theo phong cách **Elite Sharpness**.
+
+## 📋 Yêu cầu hệ thống (Prerequisites)
+- **Node.js:** v20.x hoặc v22.x trở lên
+- **Trình duyệt:** Chrome, Edge, Safari (Hỗ trợ Tailwind 4)
+- **Docker:** (Tùy chọn cho triển khai nhanh)
 
 ## 🎨 Design System: Elite Sharpness
-Dự án tuân thủ nghiêm ngặt các quy tắc thiết kế:
-- **Border Radius:** Luôn là `0px` (Không bo góc).
-- **Màu sắc:** Tương phản cực cao (Đen/Trắng/Cam Dole `#FF5F00`).
-- **Hiệu ứng:** Đổ bóng cứng (Hard Shadow), không dùng Gradient hay Blur mờ ảo.
-- **Font chữ:** Geist Variable (Sử dụng Bold/Italic để nhấn mạnh sự mạnh mẽ).
+- **Border Radius:** `0px` (Góc cạnh mạnh mẽ).
+- **Màu sắc:** Black, White, Dole Orange (`#FF5F00`).
+- **Typography:** Geist Variable (Bold/Italic focus).
 
 ## 🚀 Công nghệ sử dụng
 - **Core:** React 19 + TypeScript
-- **Build Tool:** Vite 8
+- **Build Tool:** Vite 6
 - **Styling:** Tailwind CSS 4
-- **Animation:** Framer Motion (Smooth transitions)
-- **Components:** Radix UI, Lucide Icons
-- **Editor:** Tiptap & CKEditor 5 (Quản lý tin tức)
+- **Animation:** Framer Motion
 
-## 📦 Các tính năng chính
-- **Landing Page Đặt sân:** Hệ thống lưới chọn giờ đặt sân tương tác thời gian thực.
-- **Cửa hàng trực tuyến:** Duyệt sản phẩm, bộ lọc thông minh, giỏ hàng và thanh toán QR.
-- **Admin Portal:** Giao diện quản lý toàn diện cho chủ cửa hàng (thống kê, quản lý đơn, cấu hình sân).
-- **SEO Optimization:** Tích hợp JSON-LD, Meta Tags động cho từng sản phẩm và tin tức.
-
-## 🛠 Cài đặt & Chạy thử
-
-### 1. Chạy với Docker (Khuyên dùng)
-Nếu bạn dùng Docker Compose ở thư mục gốc:
+## 🛠 Cấu hình Biến môi trường (.env)
+Cần thiết để Frontend kết nối được với Backend API:
 ```bash
-docker-compose up -d frontend
+VITE_API_URL=http://localhost:5005/api
 ```
 
-### 2. Chạy thủ công (Manual)
-1. Cài đặt dependencies:
-   ```bash
-   npm install
-   ```
-2. Cấu hình file `.env` (Trỏ `VITE_API_URL` về Backend).
-3. Chạy Development:
-   ```bash
-   npm run dev
-   ```
+## ⚙️ Các lệnh Scripts (NPM Scripts)
+- `npm run dev`: Khởi chạy môi trường phát triển (HMR).
+- `npm run build`: Đóng gói ứng dụng tối ưu cho Production.
+- `npm run lint`: Kiểm tra lỗi cú pháp và chuẩn code (ESLint).
+- `npm run preview`: Xem thử bản build chính thức ở máy cục bộ.
 
-## 📂 Cấu trúc thư mục
-- `/src/components`: Các thành phần giao diện dùng chung và UI đặc thù.
-- `/src/pages`: Các trang chức năng (Home, CourtBooking, Admin, v.v.).
-- `/src/context`: Quản lý trạng thái toàn cục (CartContext).
-- `/src/lib`: Cấu hình Axios, định nghĩa Brand Config.
-- `/src/assets`: Tài nguyên hình ảnh và phong cách Elite.
+## 📂 Cấu trúc dự án
+- `/src/components`: Các thành phần UI nguyên khối.
+- `/src/pages`: Toàn bộ các trang (Home, CourtBooking, Admin...).
+- `/src/context`: Quản lý giỏ hàng và trạng thái toàn cục.
 
 ---
 © 2026 ĐỖ LÊ SPORT - Nâng Tầm Trải Nghiệm Thể Thao.
