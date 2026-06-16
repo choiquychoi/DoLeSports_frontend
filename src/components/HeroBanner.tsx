@@ -57,6 +57,7 @@ const HeroBanner = () => {
         slidesPerView={1}
         loop={slides.length > 1}
         autoplay={{ delay: 6000, disableOnInteraction: false }}
+        autoHeight={true}
         navigation={{
           nextEl: '.hero-next-v2',
           prevEl: '.hero-prev-v2',
@@ -70,65 +71,108 @@ const HeroBanner = () => {
         }}
         className="w-full"
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide._id}>
-            {({ isActive }) => (
-              <div className="w-full relative aspect-[16/9] md:aspect-[21/7] min-h-[400px] md:min-h-[600px] flex items-center">
-                
-                {/* 1. Background Image - LUÔN RÕ NÉT (100% OPACITY) */}
-                <div className="absolute inset-0 z-0">
-                  <img 
-                    src={slide.image} 
-                    alt={slide.title}
-                    className="w-full h-full object-cover brightness-[0.95]"
-                  />
-                  {/* Lớp gradient cực kỳ mỏng bên trái để hỗ trợ đọc chữ, không làm trắng ảnh */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent" />
-                </div>
+        {slides.map((slide) => {
+          const hasText = (slide.title && slide.title.trim() !== '') || (slide.subtitle && slide.subtitle.trim() !== '');
+          return (
+            <SwiperSlide key={slide._id}>
+              {({ isActive }) => (
+                hasText ? (
+                  <div className="w-full relative aspect-[16/9] md:aspect-[21/7] min-h-[400px] md:min-h-[600px] flex items-center">
+                    
+                    {/* 1. Background Image - LUÔN RÕ NÉT (100% OPACITY) */}
+                    <div className="absolute inset-0 z-0">
+                      {slide.link ? (
+                        <a href={slide.link} className="block w-full h-full">
+                          <img 
+                            src={slide.image} 
+                            alt={slide.title || "Banner"}
+                            className="w-full h-full object-cover brightness-[0.95]"
+                          />
+                        </a>
+                      ) : (
+                        <img 
+                          src={slide.image} 
+                          alt={slide.title || "Banner"}
+                          className="w-full h-full object-cover brightness-[0.95]"
+                        />
+                      )}
+                      {/* Lớp gradient cực kỳ mỏng bên trái để hỗ trợ đọc chữ, không làm trắng ảnh */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent" />
+                    </div>
 
-                {/* 2. Content Container */}
-                <div className="container mx-auto px-6 md:px-12 relative z-10">
-                  <div className="max-w-3xl">
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={isActive ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 25, delay: 0.2 }}
-                      className="bg-black text-white inline-block px-4 py-1 font-black text-[10px] tracking-[0.4em] mb-6 shadow-[6px_6px_0px_0px_rgba(255,95,0,1)]"
-                    >
-                      COLLECTION // 2026
-                    </motion.div>
-                    
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 25, delay: 0.3 }}
-                    >
-                      <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] text-black drop-shadow-[2px_2px_0px_rgba(255,255,255,0.8)] mb-8">
-                        {slide.title}
-                      </h1>
-                    </motion.div>
-                    
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 25, delay: 0.4 }}
-                      className="flex flex-col md:flex-row items-start md:items-center gap-8"
-                    >
-                      <p className="text-xs md:text-sm font-black text-black uppercase tracking-[0.2em] max-w-md leading-relaxed border-l-4 border-dole-orange pl-6 drop-shadow-[1px_1px_0px_rgba(255,255,255,0.5)]">
-                        {slide.subtitle}
-                      </p>
-                      
-                      <button className="group relative bg-black text-white px-10 py-5 font-black uppercase tracking-widest text-xs hover:bg-dole-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
-                        SẮM NGAY
-                        <span className="ml-3 inline-block group-hover:translate-x-2 transition-transform">→</span>
-                      </button>
-                    </motion.div>
+                    {/* 2. Content Container */}
+                    <div className="container mx-auto px-6 md:px-12 relative z-10">
+                      <div className="max-w-3xl">
+                        <motion.div
+                          initial={{ opacity: 0, x: -50 }}
+                          animate={isActive ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                          transition={{ type: "spring", stiffness: 200, damping: 25, delay: 0.2 }}
+                          className="bg-black text-white inline-block px-4 py-1 font-black text-[10px] tracking-[0.4em] mb-6 shadow-[6px_6px_0px_0px_rgba(255,95,0,1)]"
+                        >
+                          COLLECTION // 2026
+                        </motion.div>
+                        
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                          transition={{ type: "spring", stiffness: 200, damping: 25, delay: 0.3 }}
+                        >
+                          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] text-black drop-shadow-[2px_2px_0px_rgba(255,255,255,0.8)] mb-8">
+                            {slide.title}
+                          </h1>
+                        </motion.div>
+                        
+                        <motion.div 
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                          transition={{ type: "spring", stiffness: 200, damping: 25, delay: 0.4 }}
+                          className="flex flex-col md:flex-row items-start md:items-center gap-8"
+                        >
+                          <p className="text-xs md:text-sm font-black text-black uppercase tracking-[0.2em] max-w-md leading-relaxed border-l-4 border-dole-orange pl-6 drop-shadow-[1px_1px_0px_rgba(255,255,255,0.5)]">
+                            {slide.subtitle}
+                          </p>
+                          
+                          {slide.link ? (
+                            <a 
+                              href={slide.link} 
+                              className="group relative bg-black text-white px-10 py-5 font-black uppercase tracking-widest text-xs hover:bg-dole-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 inline-block text-center"
+                            >
+                              SẮM NGAY
+                              <span className="ml-3 inline-block group-hover:translate-x-2 transition-transform">→</span>
+                            </a>
+                          ) : (
+                            <button className="group relative bg-black text-white px-10 py-5 font-black uppercase tracking-widest text-xs hover:bg-dole-orange transition-all duration-300 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                              SẮM NGAY
+                              <span className="ml-3 inline-block group-hover:translate-x-2 transition-transform">→</span>
+                            </button>
+                          )}
+                        </motion.div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            )}
-          </SwiperSlide>
-        ))}
+                ) : (
+                  <div className="w-full relative">
+                    {slide.link ? (
+                      <a href={slide.link} className="block w-full">
+                        <img 
+                          src={slide.image} 
+                          alt="Banner"
+                          className="w-full h-auto block brightness-[0.95]"
+                        />
+                      </a>
+                    ) : (
+                      <img 
+                        src={slide.image} 
+                        alt="Banner"
+                        className="w-full h-auto block brightness-[0.95]"
+                      />
+                    )}
+                  </div>
+                )
+              )}
+            </SwiperSlide>
+          );
+        })}
 
         {/* Navigation Controls */}
         <div className="absolute bottom-12 right-12 z-20 flex gap-4 hidden md:flex">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import api from '@/lib/axios';
 import { BRAND_CONFIG } from '../lib/config';
@@ -33,9 +33,13 @@ const QuickContact = () => {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1 }}
-        className="pointer-events-auto w-14 h-14 bg-white border-4 border-black flex items-center justify-center text-blue-600 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+        className="pointer-events-auto w-14 h-14 bg-white border-4 border-black flex items-center justify-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+        title="Chat Zalo"
       >
-        <MessageCircle size={28} fill="currentColor" className="text-white" />
+        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3C6.48 3 2 7.02 2 12C2 14.9 3.5 17.5 6 19.1V22.5L9.5 20.6C10.3 20.9 11.1 21 12 21C17.52 21 22 16.98 22 12C22 7.02 17.52 3 12 3Z" fill="#0068FF" />
+          <text x="12" y="11.5" dominantBaseline="middle" textAnchor="middle" fill="white" fontSize="6.2" fontWeight="900" fontFamily="Arial, Helvetica, sans-serif" letterSpacing="-0.3px">zalo</text>
+        </svg>
       </motion.a>
 
       {/* Phone Pill */}
